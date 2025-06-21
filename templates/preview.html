@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Preview</title>
+  <style>
+    table.data {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    table.data th, table.data td {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+    h2 {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Preview: {{ filename }}</h1>
+
+  <h2>First 10 Rows</h2>
+  {{ preview|safe }}
+
+  <h2>Summary Statistics</h2>
+  {{ summary|safe }}
+
+  <p><a href="{{ url_for('index') }}">Upload another file</a></p>
+</body>
+</html>
